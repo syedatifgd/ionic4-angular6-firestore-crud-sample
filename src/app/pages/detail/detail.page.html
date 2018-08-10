@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ (song | async)?.songName }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form [formGroup]="updateSongForm" (submit)="updateSong()">
+    <h3> Artist </h3>
+    <ion-item>
+      <ion-input formControlName="artistName" type="text" value="{{ (song | async)?.artistName }}"></ion-input>
+    </ion-item>
+          
+    <h3> Song Name </h3>
+    <ion-item>
+      <ion-input formControlName="songName" type="text" value="{{ (song | async)?.songName }}"></ion-input>
+    </ion-item>
+
+    <h3> Album </h3>
+
+    <ion-item>
+      <ion-input formControlName="albumName" type="text" value="{{ (song | async)?.albumName }}">  
+      </ion-input>
+    </ion-item>
+
+    <h3> Description </h3>
+    <ion-item>
+      <ion-input formControlName="songDescription" type="text" value="{{ (song | async)?.songDescription }}">
+      </ion-input>
+    </ion-item>
+
+    <ion-button expand="block" type="submit">
+        UPDATE SONG
+    </ion-button>
+
+    <ion-button expand="block" (click)="deleteSong()">
+        DELETE SONG
+    </ion-button>
+  </form>
+<!-- 
+  <p>
+    It was part of the {{ (song | async)?.albumName }} album.
+  </p> -->
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "CRUD APP FireStore",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
